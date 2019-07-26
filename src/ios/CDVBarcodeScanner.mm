@@ -953,9 +953,10 @@ parentViewController:(UIViewController*)parentViewController
 //--------------------------------------------------------------------------
 
 #define RETICLE_SIZE    500.0f
-#define RETICLE_WIDTH    10.0f
+#define RETICLE_WIDTH    4.0f
+#define LINE_WIDTH       1.0f
 #define RETICLE_OFFSET   60.0f
-#define RETICLE_ALPHA     0.4f
+#define RETICLE_ALPHA     0.3f
 
 //-------------------------------------------------------------------------
 // builds the green box and red line
@@ -966,9 +967,9 @@ parentViewController:(UIViewController*)parentViewController
     CGContextRef context = UIGraphicsGetCurrentContext();
 
     if (self.processor.is1D) {
-        UIColor* color = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:RETICLE_ALPHA];
+        UIColor* color = [UIColor colorWithRed:242.0 green:243.0 blue:244.0 alpha:RETICLE_ALPHA];
         CGContextSetStrokeColorWithColor(context, color.CGColor);
-        CGContextSetLineWidth(context, RETICLE_WIDTH);
+        CGContextSetLineWidth(context, LINE_WIDTH);
         CGContextBeginPath(context);
         CGFloat lineOffset = (CGFloat) (RETICLE_OFFSET+(0.5*RETICLE_WIDTH));
         CGContextMoveToPoint(context, lineOffset, RETICLE_SIZE/2);
